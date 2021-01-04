@@ -1,0 +1,16 @@
+<div class="jumbotron jumbotron-fluid py-3 mb-0">
+  <h1 class="display-4 text-center">Планировщик дел</h1>
+</div>
+<app-task-detail-form></app-task-detail-form>
+<table class="table">
+  <tbody>
+    <tr *ngFor="let pd of service.list">
+      <div >
+        <td class="col-md-11" (click)="populateForm(pd)">{{ pd.taskDescription }}</td>
+        <td class="col-md-1">
+          <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.taskDetailId)"></i>
+        </td>
+      </div>
+    </tr>
+  </tbody>
+</table>
